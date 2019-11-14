@@ -1,10 +1,11 @@
 import 'package:flutter/material.dart';
 
 class Profile extends StatelessWidget {
-  static String tag = 'profile'; 
+  static String tag = 'profile'; // tag for navigation
   @override
   Widget build(BuildContext context) {
-
+    
+    // Return Profile screen
     return Scaffold(
       appBar: AppBar(
         centerTitle: true,
@@ -21,6 +22,7 @@ class Profile extends StatelessWidget {
            child: Column (
             mainAxisAlignment: MainAxisAlignment.center,
             crossAxisAlignment: CrossAxisAlignment.center,
+            // Add widget to contain user image
              children: <Widget>[
               CircleAvatar(
                 radius: 120,
@@ -31,13 +33,14 @@ class Profile extends StatelessWidget {
                 width: 400,
                 child: Divider(color: Colors.teal,),
               ),
+              // Container for userdata
               Container (
                 color: Colors.white,
                 padding: EdgeInsets.all(20.0),
                 margin: EdgeInsets.symmetric(vertical: 0, horizontal: 70.0),
                 child: Row(
                   children: <Widget>[
-                    Text('Username')
+                    Text('JohnDoe')
                   ],
                 ),
               ),
@@ -47,7 +50,7 @@ class Profile extends StatelessWidget {
                 margin: EdgeInsets.symmetric(vertical: 0, horizontal: 70.0),
                 child: Row(
                   children: <Widget>[
-                    Text('First name')
+                    Text('John')
                   ],
                 ),
               ),
@@ -57,7 +60,7 @@ class Profile extends StatelessWidget {
                 margin: EdgeInsets.symmetric(vertical: 0, horizontal: 70.0),
                 child: Row(
                   children: <Widget>[
-                    Text('Last name')
+                    Text('Doe')
                   ],
                 ),
               ),
@@ -67,7 +70,17 @@ class Profile extends StatelessWidget {
                 margin: EdgeInsets.symmetric(vertical: 0, horizontal: 70.0),
                 child: Row(
                   children: <Widget>[
-                    Text('Email')
+                    Text('JohnDoe@email.com')
+                  ],
+                ),
+              ),
+               Container (
+                color: Colors.white,
+                padding: EdgeInsets.all(20.0),
+                margin: EdgeInsets.symmetric(vertical: 0, horizontal: 70.0),
+                child: Row(
+                  children: <Widget>[
+                    Text('Activated', style: TextStyle(color: Colors.green))
                   ],
                 ),
               ),
@@ -75,6 +88,7 @@ class Profile extends StatelessWidget {
            ),
          ),
       ),
+      // Add drawer navigation
       drawer: Drawer(
         child: ListView(
           padding: EdgeInsets.zero,

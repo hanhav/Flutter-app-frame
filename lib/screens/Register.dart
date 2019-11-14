@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
 class Register extends StatefulWidget {
-  static String tag = 'register'; 
+  static String tag = 'register'; // tag for navigation
   @override
   RegisterState createState() => RegisterState();
 }
@@ -10,6 +10,7 @@ class RegisterState extends State<Register> {
   @override
   Widget build(BuildContext context) {
 
+    // Username text input widget
     final username = TextFormField(
       keyboardType: TextInputType.emailAddress,
       autofocus: false,
@@ -24,6 +25,7 @@ class RegisterState extends State<Register> {
       )
     );
 
+    // Firstname text input widget
     final firstName = TextFormField(
       keyboardType: TextInputType.emailAddress,
       autofocus: false,
@@ -38,6 +40,7 @@ class RegisterState extends State<Register> {
       )
     );
 
+    // Lastname text input widget
     final lastName = TextFormField(
       keyboardType: TextInputType.emailAddress,
       autofocus: false,
@@ -52,6 +55,7 @@ class RegisterState extends State<Register> {
       )
     );
 
+    // Email text input widget
     final email  = TextFormField(
       keyboardType: TextInputType.emailAddress,
       autofocus: false,
@@ -66,6 +70,7 @@ class RegisterState extends State<Register> {
       )
     );
 
+    // Password text input widget
     final passWord = TextFormField(
       autofocus: false,
       obscureText: true,
@@ -80,12 +85,14 @@ class RegisterState extends State<Register> {
       )
     );
 
+    // Register button text input widget
     final registerButton = Padding(
       padding: EdgeInsets.symmetric(vertical: 16.0),
       child: MaterialButton(
         minWidth: 200.0,
         height: 42.0,
         onPressed: () {
+          // Navigate to dashboard without possibility to navigate back
           Navigator.pushReplacementNamed(context, 'dashboard');
         },
         color: Colors.redAccent,
@@ -93,6 +100,7 @@ class RegisterState extends State<Register> {
       ),
     );
 
+    // Widget for moving back to Login screen
     final allreadyHaveAnAccount = Row(
       mainAxisAlignment: MainAxisAlignment.center,
       crossAxisAlignment: CrossAxisAlignment.center,
@@ -100,12 +108,14 @@ class RegisterState extends State<Register> {
         Text('Allready have an account?',style: TextStyle(color: Colors.black)),
         FlatButton(
           child: Text('Log In', style: TextStyle(color: Colors.redAccent)),
+          // Navigate normally starting screen
           onPressed: () {
             Navigator.pushNamed(context, '/');
           },
         )
       ],);
 
+    // Return register page
     return Scaffold(
       backgroundColor: Colors.white,
      body: Container (
@@ -119,6 +129,7 @@ class RegisterState extends State<Register> {
           child: ListView(
           shrinkWrap: true,
           padding: EdgeInsets.only(left: 24.0, right: 24.0),
+          // List all created widgets as children and create spacers between them
           children: <Widget>[
             username,
             SizedBox(height: 8.0),

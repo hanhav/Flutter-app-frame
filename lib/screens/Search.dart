@@ -7,7 +7,9 @@ class Search extends StatefulWidget {
 }
 
 class _SearchState extends State<Search> {
+  // Screen title as widget because it will be hidden when doing search
   Widget appBarTitle = Text('Search');
+  // Define search icon. Icon will be changed after state change
   Icon openSearch = Icon(Icons.search, color: Colors.white);
   @override
   Widget build(BuildContext context) {
@@ -18,6 +20,9 @@ class _SearchState extends State<Search> {
         actions: <Widget>[
           IconButton(
             icon: openSearch,
+            // When user clicks on search icon -> 
+            // change appbar title to textform widget and change icon to close icon  
+            // After user clicks on close icon remove textform widget and display screen title
             onPressed: () {
               setState(() {
                 if (this.openSearch.icon == Icons.search) {
@@ -42,6 +47,7 @@ class _SearchState extends State<Search> {
           )
         ],
       ),
+      // Add drawer navigation to screen with listiles and navigation
        drawer: Drawer(
         child: ListView(
           padding: EdgeInsets.zero,
